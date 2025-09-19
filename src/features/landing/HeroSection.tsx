@@ -1,21 +1,55 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 const HeroSection: React.FC = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
+
+  const handleVideoError = () => {
+    setVideoError(true);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-brand-primary pt-20 overflow-hidden">
+      {/* Video Background */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        preload="metadata"
+        onLoadedData={handleVideoLoad}
+        onError={handleVideoError}
+        className={`absolute z-0 w-auto min-w-full min-h-full max-w-none transition-opacity duration-1000 ${
+          videoLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
         style={{ objectFit: 'cover', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
       >
+        {/* Custom video sources - replace with your video files */}
+        <source src="/videos/hero-background-1080p.mp4" type="video/mp4" />
+        <source src="/videos/hero-background-720p.mp4" type="video/mp4" />
+        <source src="/videos/hero-background.webm" type="video/webm" />
+        
+        {/* Fallback to external video if custom video not available */}
         <source src="https://cdn.coverr.co/videos/coverr-a-man-using-a-laptop-in-a-modern-office-7484/1080p.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
+      {/* Fallback background for when video fails to load */}
+      {videoError && (
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-primary"></div>
+      )}
+
+      {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-brand-primary/70"></div>
+
+      {/* Mobile-optimized background for smaller screens */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-primary md:hidden"></div>
 
       <div className="container mx-auto px-6 text-center z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
