@@ -9,8 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@stripe/stripe-js": "^1.29.0",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.23.22",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.63.0",
+    "react-router-dom": "^7.9.2",
+    "react-stripe-js": "^1.1.5",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

@@ -5,6 +5,12 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { href: '#services', label: 'Services' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#pricing', label: 'Pricing' },
+    { href: '#booking', label: 'Book Call' },
+    { href: '#testimonials', label: 'Testimonials' },
+    { href: '#blog', label: 'Blog' },
+    { href: '#faq', label: 'FAQ' },
     { href: '#team', label: 'Our Team' },
     { href: '#contact', label: 'Contact' },
   ];
@@ -24,6 +30,17 @@ const Header: React.FC = () => {
                 {link.label}
               </a>
             ))}
+            <div className="flex items-center gap-4">
+              <a href="/portal" className="text-gray-300 hover:text-brand-accent transition-colors duration-300">
+                Client Portal
+              </a>
+              <a href="/crm" className="text-gray-300 hover:text-brand-accent transition-colors duration-300">
+                CRM
+              </a>
+              <a href="/analytics" className="text-gray-300 hover:text-brand-accent transition-colors duration-300">
+                Analytics
+              </a>
+            </div>
             <a href="#contact" className="bg-brand-accent text-white px-5 py-2 rounded-full hover:bg-blue-500 transition-colors duration-300 font-semibold">
               Get a Quote
             </a>
@@ -52,6 +69,15 @@ const Header: React.FC = () => {
                   {link.label}
                 </a>
               ))}
+              <a href="/portal" className="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-center py-2" onClick={() => setIsMenuOpen(false)}>
+                Client Portal
+              </a>
+              <a href="/crm" className="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-center py-2" onClick={() => setIsMenuOpen(false)}>
+                CRM
+              </a>
+              <a href="/analytics" className="text-gray-300 hover:text-brand-accent transition-colors duration-300 text-center py-2" onClick={() => setIsMenuOpen(false)}>
+                Analytics
+              </a>
               <a href="#contact" className="bg-brand-accent text-white px-5 py-2 rounded-full hover:bg-blue-500 transition-colors duration-300 font-semibold text-center" onClick={() => setIsMenuOpen(false)}>
                 Get a Quote
               </a>

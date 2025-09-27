@@ -23,12 +23,14 @@ const HeroSection: React.FC = () => {
         muted
         playsInline
         preload="metadata"
+        poster="/hero-poster.jpg"
         onLoadedData={handleVideoLoad}
         onError={handleVideoError}
         className={`absolute z-0 w-auto min-w-full min-h-full max-w-none transition-opacity duration-1000 ${
           videoLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         style={{ objectFit: 'cover', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+        aria-label="Background video showing modern office workspace"
       >
         {/* Custom video sources - replace with your video files */}
         <source src="/videos/hero-background-1080p.mp4" type="video/mp4" />

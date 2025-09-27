@@ -7,7 +7,7 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   return (
     <div className="bg-brand-secondary rounded-2xl overflow-hidden group transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-brand-accent/20">
       <div className="relative">
-        <img src={member.imageUrl} alt={member.name} className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110" />
+        <img src={member.imageUrl} alt={member.name} loading="lazy" className="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-110" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
       </div>
       <div className="p-6">
@@ -29,7 +29,7 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
 
 const TeamSection: React.FC = () => {
   return (
-    <section id="team" className="py-20 bg-brand-primary/95" style={{backgroundImage: 'radial-gradient(circle at top, #2B2B4F, #0D0D2B)'}}>
+    <section id="team" className="py-20 bg-brand-primary/95" style={{backgroundImage: 'radial-gradient(circle at top, #1a1a3a, #030213)'}}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white">Meet Our Experts</h2>
